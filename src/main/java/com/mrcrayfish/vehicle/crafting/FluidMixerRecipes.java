@@ -4,11 +4,14 @@ import com.google.common.collect.Maps;
 import com.mrcrayfish.vehicle.init.ModFluids;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
 
 import javax.annotation.Nullable;
 import java.util.HashMap;
 import java.util.Optional;
+
+import static net.minecraftforge.fml.common.registry.GameRegistry.makeItemStack;
 
 /**
  * Author: MrCrayfish
@@ -26,7 +29,7 @@ public class FluidMixerRecipes
 
     private FluidMixerRecipes()
     {
-        mixingMap.put(new FluidMixerRecipe(ModFluids.BLAZE_JUICE, 20, ModFluids.ENDER_SAP, 20, new ItemStack(Items.GLOWSTONE_DUST)), new FluidExtract(ModFluids.FUELIUM, 40));
+        mixingMap.put(new FluidMixerRecipe(ModFluids.BLAZE_JUICE, 20, ModFluids.ENDER_SAP, 20, makeItemStack("minecraft:redstone", 0, 1, null)), new FluidExtract(ModFluids.FUELIUM, 40));
     }
 
     public HashMap<FluidMixerRecipe, FluidExtract> getMixingMap()

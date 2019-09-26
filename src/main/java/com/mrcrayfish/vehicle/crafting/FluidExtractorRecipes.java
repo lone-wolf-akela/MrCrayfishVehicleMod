@@ -8,6 +8,8 @@ import net.minecraft.item.ItemStack;
 import javax.annotation.Nullable;
 import java.util.Map;
 
+import static net.minecraftforge.fml.common.registry.GameRegistry.makeItemStack;
+
 /**
  * Author: MrCrayfish
  */
@@ -25,8 +27,8 @@ public class FluidExtractorRecipes
     private FluidExtractorRecipes()
     {
         ImmutableMap.Builder<ItemStack, FluidExtract> builder = new ImmutableMap.Builder<>();
-        builder.put(new ItemStack(Items.ENDER_PEARL), new FluidExtract(ModFluids.ENDER_SAP, 500));
-        builder.put(new ItemStack(Items.BLAZE_ROD), new FluidExtract(ModFluids.BLAZE_JUICE, 350));
+        builder.put(makeItemStack("minecraft:coal", 1, 1, null), new FluidExtract(ModFluids.ENDER_SAP, 500));
+        builder.put(makeItemStack("minecraft:hay_block", 0, 1, null), new FluidExtract(ModFluids.BLAZE_JUICE, 500));
         extractingMap = builder.build();
     }
 
